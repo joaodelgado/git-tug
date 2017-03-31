@@ -31,9 +31,17 @@ pull_branch() {
 
     echo "Pulling $BRANCH"
 
-    git checkout $BRANCH > /dev/null || exit 1
+    if [ $BRANCH != $CURRENT_BRANCH ]
+    then
+        git checkout $BRANCH > /dev/null || exit 1
+    fi
+
     git pull --rebase > /dev/null || exit 1
-    git checkout $CURRENT_BRANCH > /dev/null || exit 1
+
+    if [ $BRANCH != $CURRENT_BRANCH ]
+    then
+        git checkout $CURRENT_BRANCH > /dev/null || exit 1
+    fi
 }
 
 check_branch() {
