@@ -31,9 +31,9 @@ pull_branch() {
 
     echo "Pulling $BRANCH"
 
-    git checkout $BRANCH || exit 1
-    git pull --rebase || exit 1
-    git checkout $CURRENT_BRANCH || exit 1
+    git checkout $BRANCH > /dev/null || exit 1
+    git pull --rebase > /dev/null || exit 1
+    git checkout $CURRENT_BRANCH > /dev/null || exit 1
 }
 
 check_branch() {
@@ -109,7 +109,7 @@ main() {
     git stash list | grep -- '--- git-tug ---' > /dev/null
     if [ $? -eq 0 ]
     then
-        echo "Reaplying local changes" && git stash pop || exit 2
+        echo "Reaplying local changes" && git stash pop > /dev/null || exit 2
     fi
 }
 
