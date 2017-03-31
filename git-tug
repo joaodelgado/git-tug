@@ -11,8 +11,6 @@ PURPLE='\033[0;35m' # Purple
 CYAN='\033[0;36m'   # Cyan
 WHITE='\033[0;37m'  # White
 
-# Exit if any command fails
-
 if [ "$DEBUG" = "yes" ]
 then
     set -x
