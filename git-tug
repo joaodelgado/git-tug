@@ -74,7 +74,7 @@ check_branch() {
     then
         echo -e "${YELLOW}$LOCAL - ahead${NC}"
     else
-        echo -e "${RED}$LOCAL - diverged${RED}"
+        echo -e "${RED}$LOCAL - diverged${NC}"
     fi
 }
 
