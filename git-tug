@@ -103,7 +103,7 @@ main() {
     fi
 
     # Fetch remote
-    echo "Fetching from remote repository" && git fetch --prune || exit 2
+    echo "Fetching from remote repository" && git fetch --tags --prune || exit 2
 
     if [[ $(git status -s) ]]
     then
